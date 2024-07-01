@@ -74,11 +74,10 @@ const Home = () => {
   // validate company data according to the schema
   const validateCompanyData = (companyData) => {
     companyData?.forEach(async (item, index) => {
-      const company = await Company.validate(item);
-      if (!company) {
-        setMessage({ message : "Company data is invalid At " + index + " : " + item.name , type: "error"});
+      const company = await Company.validate(item).catch((error) => {
+        setMessage({ message : "Company data is invalid At " + index + " : " + error , type: "error"});
         return false;
-      }
+      });
     });
     
     return true;
@@ -87,11 +86,10 @@ const Home = () => {
   // validate contact data according to the schema
   const validateContactData = (contactData) => {
     contactData?.forEach(async(item, index) => {
-      const contact = await Contact.validate(item);
-      if (!contact) {
-        setMessage({message : "Contact data is invalid At " + index + " : " + item.name , type: "error"});
+      const contact = await Contact.validate(item).catch((error) => {
+        setMessage({ message : "Contact data is invalid At " + index + " : " + error , type: "error"});
         return false;
-      }
+      });
     });
     
     return true;
