@@ -21,4 +21,18 @@ router.post('/add', async (req, res) => {
     }
 });
 
+// one single router to add multiple company and contact data to the database
+router.post('/upload', async (req, res) => {
+    try {
+        const { company, contact } = req.body;
+        const newCompanies = await CompanySchema.insertMany(company);
+        const newContacts = await ContactSchema.insertMany(contact);
+
+        res.status(201).send({ newCompanies, newContacts });
+    } catch (error) {
+        console.log(error);
+        res.status(400).send(error);
+    }
+});
+
 module.exports = router;
