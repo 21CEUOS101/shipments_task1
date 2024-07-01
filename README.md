@@ -64,6 +64,9 @@ Implemented a feature that allows users to upload an Excel sheet containing comp
 ### Database
 - Database schema for Company and Contact models.
 
+### Instructions 
+- Sheet names of Excel files should be Company Data and Contact Data
+
 ## Installation
 
 ### Clone the repository
