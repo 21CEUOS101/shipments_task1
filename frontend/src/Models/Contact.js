@@ -7,7 +7,7 @@
     Contact Type (enum: "Primary", "Secondary", "Other", required)
 */
 
-import yup from 'yup';
+import * as yup from 'yup';
 
 const Contact = yup.object().shape({
     name: yup.string().required(),
