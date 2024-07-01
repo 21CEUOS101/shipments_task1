@@ -13,9 +13,9 @@ const Home = () => {
     useEffect(() => {
         console.log(file);
 
-        // check if file is xl or xls file type
+        // check if file is xl or xls or xlsx file type
         if (file) {
-            if (file.name.split('.').pop() === 'xls' || file.name.split('.').pop() === 'xl') {
+            if (file.name.split('.').pop() === 'xls' || file.name.split('.').pop() === 'xl' || file.name.split('.').pop() === 'xlsx') {
                 console.log('file is valid');
             } else {
                 console.log('file is invalid');
@@ -33,7 +33,7 @@ const Home = () => {
                     <div className="col-md-6">
                         <div className="form-group files">
                             <label>Upload Your File </label>
-                            <input type="file" className="form-control" multiple="" onClick={handleFileChange} />
+                            <input type="file" className="form-control" multiple="" onChange={handleFileChange} />
                         </div>
                     </div>
               </div>
