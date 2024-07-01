@@ -68,4 +68,4 @@ Implemented a feature that allows users to upload an Excel sheet containing comp
 
 ### Clone the repository
 ```bash
-git clone
+git clone https://github.com/21CEUOS101/shipments_task1
